@@ -22,44 +22,45 @@
         }
     }
 
+    /// <summary>
+    /// Repersents a circle derived from Shape
+    /// </summary>
+    class Circle : Shape, IDrawable
+    {
+        public double Radius { get; set; }
+
         /// <summary>
-        /// Repersents a circle derived from Shape
+        /// Constructor for Circle
         /// </summary>
-        class Circle : Shape
+        /// <param name="radius"></param>
+        public Circle(double radius)
         {
-            public double Radius { get; set; }
-
-            /// <summary>
-            /// Constructor for Circle
-            /// </summary>
-            /// <param name="radius"></param>
-            public Circle(double radius)
-            {
-                Name = "Circle";
-                Radius = radius;
-            }
-
-            /// <summary>
-            /// Calculates the area of the circle
-            /// </summary>
-            public override double CalculateArea()
-            {
-                //returns the area of the circle
-                return Math.PI * Radius * Radius;
-            }
-
-            /// <summary>
-            /// Implements Draw() mehtod for a circle.
-            /// </summary>
-            public void Draw() 
-            {
-            Console.WriteLine("Drawing a circle.");
-            }
+            Name = "Circle";
+            Radius = radius;
         }
+
+        /// <summary>
+        /// Calculates the area of the circle
+        /// </summary>
+        public override double CalculateArea()
+        {
+            //returns the area of the circle
+            return Math.PI * Radius * Radius;
+        }
+
+        /// <summary>
+        /// Implements Draw() mehtod for a circle.
+        /// </summary>
+        public void Draw()
+        {
+            Console.WriteLine("Drawing a circle.");
+
+        }
+    }
     /// <summary>
     /// Repersents a rectangle derived from Shape
     /// </summary>
-    class Rectangle : Shape
+    class Rectangle : Shape, IDrawable
     {
         // Auto-implemented properties
         public double Width { get; set; }
@@ -91,7 +92,7 @@
         public void Draw()
         {
             Console.WriteLine("Drawing a rectangle.");
-            }
+        }
     }
 
     /// <summary>
